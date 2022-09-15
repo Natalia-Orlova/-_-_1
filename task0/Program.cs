@@ -10,6 +10,8 @@
 
 string[] arr1 = { "hello", "its", "final", "task", "for", "1st", "quarter", "=)" };
 string[] newarray = new string[arr1.Length];
+PrintArray(arr1);
+Console.Write(" -> ");
 
 int j = 0;
 for (int i = 0; i < arr1.Length; i++)
@@ -22,11 +24,15 @@ for (int i = 0; i < arr1.Length; i++)
 }
 
 string[] arr2 = new string[j];
-for (int k = 0; k < j; k++)
+if (j == 0) Console.WriteLine("Элементов, соответствующих условию, в массиве нет.");
+else
 {
-    arr2[k] = newarray[k];
+    for (int k = 0; k < j; k++)
+    {
+        arr2[k] = newarray[k];
+    }
+    PrintArray(arr2);
 }
-
 
 void PrintArray(string[] array)
 {
@@ -37,7 +43,3 @@ void PrintArray(string[] array)
     }
     Console.Write($"{array[array.Length - 1]} ]");
 }
-
-PrintArray(arr1);
-Console.WriteLine();
-PrintArray(arr2);
